@@ -1,4 +1,4 @@
-package behavior.template;
+package behavior.template.game;
 
 /**
  * Template Method

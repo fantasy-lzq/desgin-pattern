@@ -1,4 +1,4 @@
-package behavior.template;
+package behavior.template.game;
 
 
 public class SnakeGame extends Game {
