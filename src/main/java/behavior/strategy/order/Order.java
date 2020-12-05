@@ -10,6 +10,11 @@ public class Order {
     private BigDecimal totalAmount;
     private OrderType orderType;
 
+    Order(BigDecimal totalAmount, OrderType orderType) {
+        this.totalAmount = totalAmount;
+        this.orderType = orderType;
+    }
+
 
     public OrderType getOrderType() {
         return orderType;
