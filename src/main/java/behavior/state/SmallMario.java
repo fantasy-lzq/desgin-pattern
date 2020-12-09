@@ -2,11 +2,15 @@ package behavior.state;
 
 
 public class SmallMario implements IMario {
-    private final MarioStateMachine stateMachine;
+    private static final SmallMario instance = new SmallMario();
 
-    public SmallMario(MarioStateMachine stateMachine) {
-        this.stateMachine = stateMachine;
+    private SmallMario() {
     }
+
+    public static SmallMario getInstance() {
+        return instance;
+    }
+
 
     @Override
     public State getName() {
@@ -14,25 +18,25 @@ public class SmallMario implements IMario {
     }
 
     @Override
-    public void obtainMushRoom() {
-        stateMachine.setCurrentState(new SuperMario(stateMachine));
+    public void obtainMushRoom(MarioStateMachine stateMachine) {
+        stateMachine.setCurrentState(SuperMario.getInstance());
         stateMachine.setScore(stateMachine.getScore() + 100);
     }
 
     @Override
-    public void obtainCape() {
-        stateMachine.setCurrentState(new CapeMario(stateMachine));
+    public void obtainCape(MarioStateMachine stateMachine) {
+        stateMachine.setCurrentState(CapeMario.getInstance());
         stateMachine.setScore(stateMachine.getScore() + 200);
     }
 
     @Override
-    public void obtainFireFlower() {
-        stateMachine.setCurrentState(new FireMario(stateMachine));
+    public void obtainFireFlower(MarioStateMachine stateMachine) {
+        stateMachine.setCurrentState(FireMario.getInstance());
         stateMachine.setScore(stateMachine.getScore() + 300);
     }
 
     @Override
-    public void meetMonster() {
-        // do nothing... }
+    public void meetMonster(MarioStateMachine stateMachine) {
+        // do nothing...
     }
 }

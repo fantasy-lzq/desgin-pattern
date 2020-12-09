@@ -1,34 +1,38 @@
 package behavior.state;
 
 public class FireMario implements IMario {
-    private final MarioStateMachine stateMachine;
+    private static final FireMario instance = new FireMario();
 
-    public FireMario(MarioStateMachine stateMachine) {
-        this.stateMachine = stateMachine;
+    private FireMario() {
+    }
+
+    public static FireMario getInstance() {
+        return instance;
     }
 
     @Override
     public State getName() {
-        return null;
+        return State.FIRE;
     }
 
     @Override
-    public void obtainMushRoom() {
-
+    public void obtainMushRoom(MarioStateMachine stateMachine) {
+        // do nothing...
     }
 
     @Override
-    public void obtainCape() {
-
+    public void obtainCape(MarioStateMachine stateMachine) {
+        // do nothing...
     }
 
     @Override
-    public void obtainFireFlower() {
-
+    public void obtainFireFlower(MarioStateMachine stateMachine) {
+        // do nothing...
     }
 
     @Override
-    public void meetMonster() {
-
+    public void meetMonster(MarioStateMachine stateMachine) {
+        stateMachine.setCurrentState(SmallMario.getInstance());
+        stateMachine.setScore(stateMachine.getScore() - 100);
     }
 }

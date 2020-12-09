@@ -5,14 +5,14 @@ public interface IMario {
 
     //以下是定义的事件
     // 吃蘑菇...
-    void obtainMushRoom();
+    void obtainMushRoom(MarioStateMachine stateMachine);
 
     // 获得斗篷
-    void obtainCape();
+    void obtainCape(MarioStateMachine stateMachine);
 
     // 获得火焰
-    void obtainFireFlower();
+    void obtainFireFlower(MarioStateMachine stateMachine);
 
     // 遇见怪物
-    void meetMonster();
+    void meetMonster(MarioStateMachine stateMachine);
 }
