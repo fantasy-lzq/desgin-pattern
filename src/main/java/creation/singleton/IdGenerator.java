@@ -63,6 +63,8 @@ public class IdGenerator {
 //     */
 //    public static IdGenerator getInstance() {
 //        if (instance == null) {
+              //  synchronized (this) 对象级别的锁
+
 //            // 类级别的锁  IdGenerator.class
 //            synchronized (IdGenerator.class) {
 //                if (instance == null) {
